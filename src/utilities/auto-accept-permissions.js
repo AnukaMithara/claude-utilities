@@ -76,7 +76,7 @@
     root.innerHTML = `
       <style>
         .box { display:flex; align-items:center; gap:10px; padding:8px 8px 8px 12px; border-radius:12px;
-               font:500 13px "anthropic-sans", system-ui, "Segoe UI", sans-serif;
+               font:500 13px system-ui, "Segoe UI", sans-serif;
                color:hsl(0 0% 97.6%); background:hsl(0 0% 12.5%);
                border:0.5px solid hsl(0 0% 87.8% / 0.15); box-shadow:0 4px 20px hsl(0 0% 0% / 0.35); }
         .dot { width:8px; height:8px; border-radius:50%; background:hsl(14.8 63.1% 59.6%); flex:none; }

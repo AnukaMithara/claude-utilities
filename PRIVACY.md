@@ -46,4 +46,4 @@ Changes to this policy will be published in this file in the project repository:
 
 Questions or concerns: open an issue at https://github.com/AnukaMithara/claude-utilities/issues
 
-Claude Utilities is not affiliated with, endorsed by, or sponsored by Anthropic.
+Claude Utilities is an unofficial, independent project. It is not affiliated with, endorsed by, or sponsored by the makers of Claude.

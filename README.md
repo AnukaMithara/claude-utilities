@@ -12,7 +12,7 @@
   <img src="store/images/screenshot-1-permissions.png" width="720" alt="Permissions tab">
 </p>
 
-> **Unofficial.** Claude Utilities is an independent project. It is not affiliated with, endorsed by, or sponsored by Anthropic. "Claude" is a trademark of Anthropic, PBC.
+> **Unofficial.** Claude Utilities is an independent project. It is not affiliated with, endorsed by, or sponsored by the makers of Claude. "Claude" is a trademark of its owner.
 
 ## Features
 

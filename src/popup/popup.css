@@ -1,8 +1,8 @@
 /* Tokens taken from claude.ai's own CSS variables (Claude theme), light and dark. */
 :root {
   color-scheme: light dark;
-  --font: "anthropic-sans", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-mono: "anthropic-mono", ui-monospace, Consolas, monospace;
+  --font: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, Consolas, monospace;
 
   --bg-000: hsl(0 0% 100%);
   --bg-100: hsl(0 0% 97.6%);

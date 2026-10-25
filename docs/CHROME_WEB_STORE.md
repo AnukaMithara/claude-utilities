@@ -27,7 +27,7 @@ Everything needed to submit Claude Utilities to the Chrome Web Store. Copy the t
 Claude Utilities
 ```
 
-> **Trademark note.** "Claude" is Anthropic's trademark. The listing, screenshots and README all state that the extension is unofficial and not affiliated with Anthropic, and the icon does not use Anthropic's logo. If a reviewer flags the name for impersonation, resubmit as **Utilities for Claude** (change `name`, `short_name` and `action.default_title` in `manifest.json`).
+> **Trademark note.** "Claude" is a trademark of its owner. The listing, screenshots and README all state that the extension is unofficial and not affiliated with the makers of Claude, and the icon does not use Claude's logo. If a reviewer flags the name for impersonation, resubmit as **Utilities for Claude** (change `name`, `short_name` and `action.default_title` in `manifest.json`).
 
 ### Summary (manifest `description`, max 132 characters)
 
@@ -61,7 +61,7 @@ Everything stays in your browser. No servers, no analytics, no tracking, no remo
 
 Open source: https://github.com/AnukaMithara/claude-utilities
 
-Claude Utilities is an independent, unofficial project. It is not affiliated with, endorsed by, or sponsored by Anthropic. "Claude" is a trademark of Anthropic, PBC.
+Claude Utilities is an independent, unofficial project. It is not affiliated with, endorsed by, or sponsored by the makers of Claude. "Claude" is a trademark of its owner.
 ```
 
 ### Category and language

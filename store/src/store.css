@@ -1,6 +1,6 @@
 /* Shared layout for Chrome Web Store images (screenshots and promo tiles). */
 :root {
-  --font: "anthropic-sans", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --clay: #c6613f;
   --clay-light: #d97757;
 }
