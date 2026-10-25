@@ -128,7 +128,7 @@ All JavaScript ships inside the package; nothing is fetched or evaluated at runt
 
 ### Data usage
 
-Tick **none** of the data types (the extension does not collect or transmit user data). Then certify all three statements:
+Tick **Website content** only. The extension reads text on claude.ai (the tool name in permission prompts, and the chat box text when the user clicks "From chat") and keeps it only in the browser; declaring it avoids a disclosure mismatch in review. Leave every other type unticked. Then certify all three statements:
 
 - I do not sell or transfer user data to third parties, outside of the approved use cases.
 - I do not use or transfer user data for purposes that are unrelated to my item's single purpose.
