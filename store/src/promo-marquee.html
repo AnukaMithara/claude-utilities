@@ -1,0 +1,26 @@
+<!doctype html>
+<!-- Chrome Web Store marquee promo tile, 1400x560. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="store.css">
+  <style>
+    .marquee { width: 1400px; height: 560px; display: flex; align-items: center; gap: 80px; padding: 0 110px;
+               background: radial-gradient(circle at 85% 20%, rgba(217,119,87,0.22), transparent 50%), #1a1918; }
+    .marquee img.logo { width: 96px; height: 96px; margin-bottom: 26px; }
+    .marquee h1 { font-size: 60px; margin: 0 0 16px; }
+    .marquee p { margin: 0; font-size: 22px; color: var(--muted); line-height: 1.45; max-width: 560px; }
+    .marquee .popup { transform: scale(1.05); margin: 0; }
+  </style>
+</head>
+<body class="dark">
+  <div class="marquee">
+    <div class="copy">
+      <img class="logo" src="../../icons/icon128.png" alt="">
+      <h1>Claude Utilities</h1>
+      <p>Small tools for claude.ai: auto-accept tool permissions in the tabs you choose, and insert saved prompts in one click.</p>
+    </div>
+    <div class="popup"><iframe src="popup-frame.html?tab=auto-accept-permissions&theme=dark" height="430"></iframe></div>
+  </div>
+</body>
+</html>

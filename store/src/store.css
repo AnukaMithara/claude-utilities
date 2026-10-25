@@ -1,0 +1,31 @@
+/* Shared layout for Chrome Web Store images (screenshots and promo tiles). */
+:root {
+  --font: "anthropic-sans", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --clay: #c6613f;
+  --clay-light: #d97757;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; overflow: hidden; font-family: var(--font); -webkit-font-smoothing: antialiased; }
+
+body.light { background: #f5f4ef; color: #141413; --muted: #6b6a64; --card: #ffffff; --line: rgba(31, 30, 29, 0.12); }
+body.dark { background: #1a1918; color: #f5f4ef; --muted: #a3a19b; --card: #262624; --line: rgba(222, 220, 209, 0.12); }
+
+.shot { width: 1280px; height: 800px; display: flex; align-items: center; gap: 72px; padding: 0 96px; }
+.copy { flex: 1; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 500; color: var(--muted); margin-bottom: 22px; }
+.eyebrow img { width: 32px; height: 32px; }
+h1 { margin: 0 0 22px; font-size: 52px; line-height: 1.08; font-weight: 600; letter-spacing: -0.02em; }
+h1 em { font-style: normal; color: var(--clay-light); }
+body.light h1 em { color: var(--clay); }
+ul.points { margin: 0; padding: 0; list-style: none; display: grid; gap: 14px; font-size: 20px; color: var(--muted); }
+ul.points li { display: flex; gap: 12px; align-items: baseline; }
+ul.points li::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--clay-light); transform: translateY(-2px); }
+
+.popup {
+  flex: none; width: 380px; border-radius: 14px; overflow: hidden; border: 1px solid var(--line);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35), 0 4px 14px rgba(0, 0, 0, 0.18);
+  transform: scale(1.3); transform-origin: center; margin: 0 60px;
+}
+.popup iframe { display: block; width: 380px; border: 0; }
+
+.disclaimer { position: absolute; left: 96px; bottom: 28px; font-size: 13px; color: var(--muted); opacity: 0.8; }

@@ -1,0 +1,48 @@
+<!doctype html>
+<!-- Simplified chat page showing the on-page countdown banner. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="store.css">
+  <style>
+    .page { position: relative; width: 1280px; height: 800px; display: flex; flex-direction: column; align-items: center; padding-top: 70px; }
+    .bubble { align-self: flex-end; margin-right: 290px; max-width: 420px; padding: 12px 16px; border-radius: 16px; background: #2f2e2b; font-size: 16px; }
+    .reply { width: 700px; margin-top: 28px; font-size: 17px; line-height: 1.6; color: #d6d4cd; }
+    .request { width: 700px; margin-top: 22px; border-radius: 14px; background: #262624; border: 1px solid rgba(222,220,209,0.12); padding: 18px 20px; }
+    .request h3 { margin: 0 0 12px; font-size: 16px; font-weight: 600; }
+    .request pre { margin: 0; padding: 12px 14px; border-radius: 10px; background: #1f1e1d; color: #c2c0b6; font: 13px/1.6 ui-monospace, Consolas, monospace; white-space: pre-wrap; }
+    .request .actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 14px; }
+    .btn { height: 32px; padding: 0 14px; border-radius: 8px; font: 500 14px var(--font); display: inline-flex; align-items: center; }
+    .btn.deny { border: 1px solid rgba(222,220,209,0.25); color: #f5f4ef; }
+    .btn.allow { background: #f5f4ef; color: #1a1918; }
+    .composer { position: absolute; bottom: 40px; width: 720px; height: 64px; border-radius: 18px; background: #262624; border: 1px solid rgba(222,220,209,0.12); color: #8b8981; display: flex; align-items: center; padding: 0 22px; font-size: 16px; }
+    .banner { position: absolute; right: 32px; bottom: 130px; display: flex; align-items: center; gap: 12px; padding: 10px 10px 10px 16px; border-radius: 14px;
+              background: #202020; border: 1px solid rgba(224,224,224,0.15); box-shadow: 0 10px 40px rgba(0,0,0,0.45); font-size: 16px; font-weight: 500; }
+    .banner .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--clay-light); }
+    .banner .cancel { height: 32px; padding: 0 14px; border-radius: 8px; background: #f9f9f9; color: #202020; display: inline-flex; align-items: center; }
+    .callout { position: absolute; right: 32px; bottom: 196px; width: 480px; text-align: right; }
+    .callout h2 { margin: 0 0 6px; font-size: 30px; line-height: 1.15; letter-spacing: -0.01em; }
+    .callout p { margin: 0; font-size: 17px; color: var(--muted); }
+  </style>
+</head>
+<body class="dark">
+  <div class="page">
+    <div class="bubble">Check how many active users signed up this week.</div>
+    <div class="reply">I'll run a read-only query against the database to count this week's sign-ups.</div>
+    <div class="request">
+      <h3>Allow Claude to use Execute SQL?</h3>
+      <pre>SELECT count(*) AS signups
+FROM users
+WHERE created_at &gt;= date_trunc('week', now());</pre>
+      <div class="actions"><span class="btn deny">Deny</span><span class="btn allow">Allow once</span></div>
+    </div>
+    <div class="composer">Reply…</div>
+
+    <div class="callout">
+      <h2>See it coming, cancel anytime</h2>
+      <p>A countdown appears before each auto-accept.</p>
+    </div>
+    <div class="banner"><span class="dot"></span>Allowing Execute SQL in 3s<span class="cancel">Cancel</span></div>
+  </div>
+</body>
+</html>

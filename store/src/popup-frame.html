@@ -1,0 +1,26 @@
+<!doctype html>
+<!-- The real popup (same CSS and scripts) with stubbed chrome.* APIs, for store images. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script src="stub.js"></script>
+  <link rel="stylesheet" href="../../src/popup/popup.css">
+  <style>body { min-height: 100vh; }</style>
+</head>
+<body>
+  <header>
+    <img src="../../icons/icon48.png" alt="" width="20" height="20">
+    <h1>Claude Utilities</h1>
+  </header>
+  <nav id="tabs" role="tablist"></nav>
+  <main id="panels"></main>
+
+  <script src="../../src/core/registry.js"></script>
+  <script src="../../src/core/storage.js"></script>
+  <script src="../../src/core/prompts.js"></script>
+  <script src="../../src/utilities/auto-accept-permissions.js"></script>
+  <script src="../../src/popup/sections/prompts.js"></script>
+  <script src="../../src/popup/sections/settings.js"></script>
+  <script src="../../src/popup/popup.js"></script>
+</body>
+</html>
