@@ -47,6 +47,8 @@ The popup follows claude.ai's look (colours, type, buttons and toggles) in light
 
 **Chrome Web Store:** coming soon.
 
+**From a release:** download `claude-utilities-<version>.zip` from [Releases](https://github.com/AnukaMithara/claude-utilities/releases), unzip it, then follow steps 2 and 3 below with the unzipped folder.
+
 **From source (Chrome, Edge, Brave or other Chromium browsers):**
 
 1. Download or clone this repository.
@@ -98,6 +100,7 @@ src/popup/sections/*.js        popup-only tabs (Prompts, Settings)
 store/src/                     HTML sources for the icon and store images
 store/images/                  generated store images
 scripts/                       check, image and packaging scripts
+.github/workflows/release.yml  builds the zip and publishes a GitHub release
 docs/                          Chrome Web Store listing and publishing guide
 ```
 
@@ -108,7 +111,9 @@ docs/                          Chrome Web Store listing and publishing guide
 
 ## Publishing
 
-See [docs/CHROME_WEB_STORE.md](docs/CHROME_WEB_STORE.md) for the store listing text, permission justifications, privacy answers, image list and submission steps.
+**GitHub release:** bump the version in `manifest.json` and `package.json`, add its `CHANGELOG.md` section, then push a matching tag (`git tag v1.2.0 && git push origin v1.2.0`), or run the **Release** workflow from the Actions tab. `.github/workflows/release.yml` checks the versions, builds the zip and publishes the release with that changelog section as notes.
+
+**Chrome Web Store:** see [docs/CHROME_WEB_STORE.md](docs/CHROME_WEB_STORE.md) for the store listing text, permission justifications, privacy answers, image list and submission steps.
 
 ## License
 
