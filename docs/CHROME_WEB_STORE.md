@@ -46,6 +46,8 @@ When Claude asks "Allow Claude to use <tool>?", the extension can click "Allow o
 • A countdown with a Cancel button appears on the page before each accept (delay is configurable, 0 for immediate).
 • Allow and never-allow lists let you limit it to certain tools, or keep risky ones for yourself.
 • It only ever clicks "Allow once". It never clicks Deny or "always allow".
+• It keeps working while the tab is in the background or another window has focus.
+• Optionally, it also clicks Submit on MCP "requests your input" forms (never Decline), checked against the same never-allow list.
 • The toolbar badge shows ON for tabs where it is active, and the popup lists the last 24 hours of activity.
 
 SAVED PROMPTS
@@ -115,7 +117,7 @@ When the user clicks "Insert" or "From chat" in the popup, the extension runs a 
 
 **Host permission: https://claude.ai/***
 ```
-The extension only works on claude.ai. Its content script detects tool permission prompts and, only in tabs where the user switched auto-accept on, clicks "Allow once" after a visible countdown. The host permission also lets the popup check that the current tab is claude.ai before inserting a prompt.
+The extension only works on claude.ai. Its content script detects tool permission prompts and, only in tabs where the user switched auto-accept on, clicks "Allow once" after a visible countdown. A small script in the page keeps that working while the tab is in the background, by reporting the tab as visible and running the page's pending scroll checks. The host permission also lets the popup check that the current tab is claude.ai before inserting a prompt.
 ```
 
 ### Remote code

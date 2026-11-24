@@ -10,7 +10,8 @@
 //   scope       "tab"    switched on per browser tab, off in every tab by default
 //               "global" (default) switched on for all tabs via defaults.enabled
 //   defaults    default settings; global utilities must include `enabled`
-//   options     optional popup fields: [{ key, label, type: "text"|"number"|"checkbox", placeholder?, help?, min?, max? }]
+//   options     optional popup fields: [{ key, label, type: "text"|"number"|"checkbox", placeholder?, help?, min?, max?, suffix?, text? }]
+//               (`text` is shown beside a checkbox)
 //   start(cfg)  runs on claude.ai when active; returns { stop(), update?(cfg) }
 //
 // A popup section (a popup tab with its own UI, no page script):

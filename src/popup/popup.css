@@ -116,6 +116,9 @@ textarea { resize: vertical; font: 12.5px/1.5 var(--font-mono); }
 .with-suffix { display: flex; align-items: center; gap: 6px; }
 .with-suffix input { width: 64px; }
 .with-suffix small { color: var(--text-500); }
+.with-text { display: flex; align-items: center; gap: 8px; }
+.with-text small { color: var(--text-300); font-size: 12.5px; }
+input[type=checkbox] { margin: 0; width: 14px; height: 14px; accent-color: var(--accent); flex: none; }
 
 /* buttons, Claude style */
 .btn {

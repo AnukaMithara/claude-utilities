@@ -68,6 +68,15 @@ chrome.runtime.onMessage.addListener((msg, sender, respond) => {
     const tabId = sender.tab?.id;
     loadTabs().then((tabs) => respond({ state: tabs[tabId] ?? {} }));
     return true; // respond asynchronously
+  } else if (msg?.type === "wait") {
+    // Background tabs throttle their own timers; this reply isn't (see src/core/timers.js).
+    setTimeout(() => respond({}), Math.min(Math.max(0, Number(msg.ms) || 0), 5000));
+    return true;
+  } else if (msg?.type === "keep-alive") {
+    // Stop the browser from discarding (unloading) the tab to save memory while a
+    // utility needs it running in the background.
+    const tabId = sender.tab?.id;
+    if (tabId != null) chrome.tabs.update(tabId, { autoDiscardable: !msg.on }).catch(() => {});
   } else if (msg?.type === "log") {
     withLog((entries) => [
       ...entries,

@@ -45,7 +45,9 @@ function optionField(def, option, cfg) {
 
   const control = option.suffix
     ? el("span", { className: "with-suffix" }, input, el("small", { textContent: option.suffix }))
-    : input;
+    : option.text
+      ? el("span", { className: "with-text" }, input, el("small", { textContent: option.text }))
+      : input;
   return el("label", { className: "field" }, el("span", { textContent: option.label }), control);
 }
 

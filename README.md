@@ -24,7 +24,9 @@ When Claude asks *"Allow Claude to use &lt;tool&gt;?"*, the extension can click 
 - **Countdown with Cancel.** Waits a configurable delay (default 3 s, 0 for immediate) and shows a small banner on the page so you can cancel.
 - **Allow and never-allow lists.** Limit it to certain tools, or keep risky ones (for example `delete, apply_migration`) for you to approve.
 - **Only "Allow once".** It never clicks Deny or any "always allow" option.
-- **Long inputs.** When Claude keeps "Allow once" disabled until you scroll to the end of a long tool input, it scrolls the input box first.
+- **Long inputs.** When Claude keeps "Allow once" disabled until you scroll to the end of a long tool input, it reads the input box from the top down, step by step, and goes back up and down again until the button turns on.
+- **Works while you are elsewhere.** It keeps accepting while the tab is in the background, the window is minimised or behind another window, or another window has focus ("Away", on by default). Browsers slow down and pause hidden tabs; the extension keeps its countdown on time, lets the page see the scrolling, reports the tab to claude.ai as visible and focused, and stops the browser from unloading the tab to save memory.
+- **MCP input requests (optional).** With "Input" ticked it also clicks **Submit** on *"&lt;server&gt; requests your input"* forms, never **Decline**. It leaves the form for you when a required field is empty, or when a word from the never-allow list appears in the server name or the request's message (for example `drop, delete, truncate` for destructive SQL). Off by default.
 - **Activity.** The last 24 hours of auto-accepted tools are listed in the popup and then deleted automatically.
 
 ### Saved prompts
@@ -87,7 +89,9 @@ src/core/registry.js           ClaudeUtilities.register() / registerSection()
 src/core/storage.js            settings (sync) and per-tab switches (session)
 src/core/log.js                ClaudeUtilities.log(utilityId, message)
 src/core/prompts.js            saved prompts (local)
+src/core/timers.js             ClaudeUtilities.wait(ms), on time even in a hidden tab
 src/content/runner.js          starts, updates and stops page utilities
+src/content/page-bridge.js     page-world helper that keeps a hidden tab working
 src/utilities/*.js             one file per page utility
 src/popup/                     tabbed popup built from the registry
 src/popup/sections/*.js        popup-only tabs (Prompts, Settings)
